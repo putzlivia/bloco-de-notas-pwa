@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloco de Notas</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="./manifest.json">
+</head>
+<body>
+  <header>
+    <h1>📝 Meu Bloco de Notas</h1>
+  </header>
+
+  <main>
+    <!-- Área para escrever nova nota -->
+    <section id="note-section">
+      <textarea id="note-input" placeholder="Digite sua nota aqui..."></textarea>
+      <button id="save-note">Salvar Nota</button>
+    </section>
+
+    <!-- Lista de notas -->
+    <section id="notes-list">
+      <h2>Notas Salvas</h2>
+      <ul id="notes-container"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito com 💜 para o trabalho</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js')
+        .then(() => console.log('Service Worker registrado com sucesso!'))
+        .catch(err => console.error('Erro ao registrar Service Worker:', err));
+    }
+  </script>
+</body>
+</html>
